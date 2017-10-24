@@ -1,12 +1,12 @@
 <html>
-<head>  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<head>  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>3458683</title>
 
 <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="js/bootstrap/js/bootstrap.js"> </script>
-<script src="http://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+<script src="js/3Dmol-min.js"></script>
 
 
 
@@ -18,6 +18,237 @@
 }
 </style>
 <script>
+init();
+
+function init(){
+    jQuery(function(){
+  console.log("init");
+   let viewer = null;
+      let element = $('#viewer2');
+    let config = { backgroundColor: 'white' };
+    
+    viewer = $3Dmol.createViewer( element, config );
+    
+    var pdbUri = 'model/helix_310.pdb';
+
+        $.get(pdbUri, function(data) {
+        viewer.addModel(data,'pdb');
+        viewer.setStyle({}, {cartoon: {color: 'spectrum'}}); 
+        viewer.zoomTo();
+        viewer.render();
+            });
+
+
+  $('#chainA').on('click',function() {
+
+       if ($(this).text() === 'Ocultar Chain A') {
+      $(this).text('Ver Chain A');
+
+          viewer.setStyle({chain:'A'},{cross:{hidden:true}});
+            viewer.setStyle({chain:'D'},{cross:{hidden:true}});
+     
+     viewer.render();
+    }
+    else {
+        $(this).text('Ocultar Chain A');
+    
+           viewer.setStyle({chain:'A'},{cross:{hidden:false}});
+          
+           viewer.setStyle({}, {cartoon: {color: 'spectrum'}}); 
+     viewer.render();
+    }
+  }
+  
+  );
+
+    $('#chainB').on('click',function() {
+
+       if ($(this).text() === 'Ocultar Chain B') {
+      $(this).text('Ver Chain B');
+
+          viewer.setStyle({chain:'B'},{cross:{hidden:true}});
+          
+     
+     viewer.render();
+    }
+    else {
+        $(this).text('Ocultar Chain B');
+    
+           viewer.setStyle({chain:'B'},{cross:{hidden:false}});
+        
+           viewer.setStyle({}, {cartoon: {color: 'spectrum'}}); 
+     viewer.render();
+    }
+  }
+  
+  );
+
+
+      $('#chainC').on('click',function() {
+
+       if ($(this).text() === 'Ocultar Chain C') {
+      $(this).text('Ver Chain C');
+
+          viewer.setStyle({chain:'C'},{cross:{hidden:true}});
+          
+     
+     viewer.render();
+    }
+    else {
+        $(this).text('Ocultar Chain C');
+    
+           viewer.setStyle({chain:'C'},{cross:{hidden:false}});
+        
+           viewer.setStyle({}, {cartoon: {color: 'spectrum'}}); 
+     viewer.render();
+    }
+  }
+  
+  );
+
+      $('#chainD').on('click',function() {
+
+       if ($(this).text() === 'Ocultar Chain D') {
+      $(this).text('Ver Chain D');
+
+          viewer.setStyle({chain:'D'},{cross:{hidden:true}});
+          
+     
+     viewer.render();
+    }
+    else {
+        $(this).text('Ocultar Chain D');
+    
+           viewer.setStyle({chain:'D'},{cross:{hidden:false}});
+        
+           viewer.setStyle({}, {cartoon: {color: 'spectrum'}}); 
+     viewer.render();
+    }
+  }
+  
+  );
+
+      $('#chainE').on('click',function() {
+
+       if ($(this).text() === 'Ocultar Chain E') {
+      $(this).text('Ver Chain E');
+
+          viewer.setStyle({chain:'E'},{cross:{hidden:true}});
+          
+     
+     viewer.render();
+    }
+    else {
+        $(this).text('Ocultar Chain E');
+    
+           viewer.setStyle({chain:'E'},{cross:{hidden:false}});
+        
+           viewer.setStyle({}, {cartoon: {color: 'spectrum'}}); 
+     viewer.render();
+    }
+  }
+  
+  );
+
+      $('#chainF').on('click',function() {
+
+       if ($(this).text() === 'Ocultar Chain F') {
+      $(this).text('Ver Chain F');
+
+          viewer.setStyle({chain:'F'},{cross:{hidden:true}});
+          
+     
+     viewer.render();
+    }
+    else {
+        $(this).text('Ocultar Chain F');
+    
+           viewer.setStyle({chain:'F'},{cross:{hidden:false}});
+        
+           viewer.setStyle({}, {cartoon: {color: 'spectrum'}}); 
+     viewer.render();
+    }
+  }
+  
+  );
+
+        $('#chainG').on('click',function() {
+
+       if ($(this).text() === 'Ocultar Chain G') {
+      $(this).text('Ver Chain G');
+
+          viewer.setStyle({chain:'G'},{cross:{hidden:true}});
+          
+     
+     viewer.render();
+    }
+    else {
+        $(this).text('Ocultar Chain G');
+    
+           viewer.setStyle({chain:'G'},{cross:{hidden:false}});
+        
+           viewer.setStyle({}, {cartoon: {color: 'spectrum'}}); 
+     viewer.render();
+    }
+  }
+  
+  );
+
+        $('#chainH').on('click',function() {
+
+       if ($(this).text() === 'Ocultar Chain H') {
+      $(this).text('Ver Chain H');
+
+          viewer.setStyle({chain:'F'},{cross:{hidden:true}});
+          
+     
+     viewer.render();
+    }
+    else {
+        $(this).text('Ocultar Chain H');
+    
+           viewer.setStyle({chain:'H'},{cross:{hidden:false}});
+        
+           viewer.setStyle({}, {cartoon: {color: 'spectrum'}}); 
+     viewer.render();
+    }
+  }
+  
+  );
+            
+    });
+
+}
+    
+
+   
+
+
+/* 
+       function loading() {
+        console.log("loading");
+          
+       let element = $('#viewer2');
+        let config = { defaultcolors: $3Dmol.rasmolElementColors, backgroundColor: 'white' };
+        let viewer = $3Dmol.createViewer( element, config );
+        var pdbUri = '/glmoprofesor/model/1aoi.pdb';
+
+     
+        let v = viewer;
+         v.addSphere({ center: {x:0, y:0, z:0}, radius: 10.0, color: 'green' });;                      
+        
+        v.zoomTo();
+                                    
+        v.render();
+                                          
+
+        
+         
+       
+     
+	};
+
+
 
 jQuery(function() {
   let element = $('#viewer2');
@@ -26,21 +257,21 @@ jQuery(function() {
 
 
      let pdbUri = '/glmoprofesor/model/1aoi.pdb';
-     console.log(pdbUri);
+
     jQuery.ajax( pdbUri, { 
       success: function(data) {
         let v = viewer;
       
-        v.addModel( data, "pdb" );                       /* load data */
-        v.setStyle({}, {cartoon: {color: 'spectrum'}});  /* style all atoms */
+        v.addModel( data, "pdb" );                      
+        v.setStyle({}, {cartoon: {color: 'spectrum'}});  
         v.zoomTo();
         v.setStyle({chain:'B'},{cartoon:{color:'red'}});
-        v.setStyle({chain:'A'},{cross:{hidden:false}});
+        v.setStyle({chain:'A'},{cross:{hidden:true}});
         v.setStyle({bonds:0},{sphere:{radius:0.5}});
-        v.rotate(180,'x',10);                                          /* set camera */
+        v.rotate(180,'x',10);                                         
         v.render();
-                                        /* render scene */
-        v.zoom(1.2, 1000);                               /* slight zoom */
+                                       
+        v.zoom(1.2, 1000);                              
       },
       error: function(hdr, status, err) {
         console.error( "Failed to load PDB " + pdbUri + ": " + err );
@@ -51,15 +282,12 @@ jQuery(function() {
 })
 
  function showhide(){
-   let element = $('#viewer2');
-   let config = { defaultcolors: $3Dmol.rasmolElementColors, backgroundColor: 'white' };
-    let viewer = $3Dmol.createViewer( element, config );
       var v = viewer;
       v.setStyle({chain:'A'},{cross:{hidden:true}});
 
     }
   
-/*
+
     var viewer = $3Dmol.createViewer("viewer");
     viewer.setBackgroundColor(0xffffff);
 
@@ -83,9 +311,10 @@ jQuery(function() {
     <div id="title"> Molecula </div>
     <div class="row">
         <div class="col">
-        <div id="viewer2" style=" height: 90%; width: 90%;"></div>
+        <div id="viewer2" style=" height: 100%; width: 100%;"></div>
         </div>
         <div class="col hidden-sm-down">
+        //// helix_310 //// <br/>
          The X-ray crystal structure of the nucleosome core particle of 
          chromatin shows in atomic detail how the histone protein octamer is assembled
           and how 146 base pairs of DNA are organized into a superhelix around it. 
@@ -95,11 +324,23 @@ jQuery(function() {
             to contact neighbouring particles. The lack of uniformity between multiple
              histone/DNA-binding sites causes the DNA to deviate from ideal superhelix geometry.
   <a href="https://www.rcsb.org/pdb/explore.do?structureId=1AOI" target="_blank">More Info</a>.
+  <a href="http://3dmol.csb.pitt.edu/doc/index.html" target="_blank"> 3Dmol </a>
   </br>
-   <button onClick="showhide()">Protein</button>-<button onClick>Nucleic Acids</button>
+  <div class="row">
+      
+  <button id="chainA" class="btn btn-link btn-sm">Ocultar Chain A</button>
+   <button id="chainB" class="btn btn-secondary btn-sm">Ocultar Chain B</button>
+    <button id="chainC" class="btn btn-info btn-sm">Ocultar Chain C</button>
+     <button id="chainD" class="btn btn-success btn-sm">Ocultar Chain D</button>
+      <button id="chainE" class="btn btn-danger btn-sm">Ocultar Chain E</button>
+       <button id="chainF" class="btn btn-primary btn-sm">Ocultar Chain F</button>
+        <button id="chainG" class="btn btn-link btn-sm">Ocultar Chain G</button>
+         <button id="chainH" class="btn btn-danger btn-sm">Ocultar Chain H</button>
+       </div>
         </div>
        
     </div>
+  
  </div>
 </body>
 
