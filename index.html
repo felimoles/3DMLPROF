@@ -29,10 +29,11 @@ function init(){
     
     viewer = $3Dmol.createViewer( element, config );
     
-    var pdbUri = 'model/helix_310.pdb';
+    var pdbUri = 'model/1aoi.pdb';
 
         $.get(pdbUri, function(data) {
         viewer.addModel(data,'pdb');
+       
         viewer.setStyle({}, {cartoon: {color: 'spectrum'}}); 
         viewer.zoomTo();
         viewer.render();
@@ -44,7 +45,7 @@ function init(){
        if ($(this).text() === 'Ocultar Chain A') {
       $(this).text('Ver Chain A');
 
-          viewer.setStyle({chain:'A'},{cross:{hidden:true}});
+          viewer.setStyle({chain:' '},{cross:{hidden:true}});
             viewer.setStyle({chain:'D'},{cross:{hidden:true}});
      
      viewer.render();
@@ -324,6 +325,7 @@ jQuery(function() {
             to contact neighbouring particles. The lack of uniformity between multiple
              histone/DNA-binding sites causes the DNA to deviate from ideal superhelix geometry.
   <a href="https://www.rcsb.org/pdb/explore.do?structureId=1AOI" target="_blank">More Info</a>.
+    <a href="https://www.rcsb.org/pdb/explore.do?structureId=1M15" target="_blank">Arginine</a>.
   <a href="http://3dmol.csb.pitt.edu/doc/index.html" target="_blank"> 3Dmol </a>
   </br>
   <div class="row">
